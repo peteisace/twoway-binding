@@ -1,0 +1,24 @@
+div {
+    margin: 0px;
+    padding: 0px;
+}
+
+.appMain {
+    padding: 100px;
+}
+
+.dc {
+    &__text {
+        height: 32px;
+        min-width: 300px;
+    }
+
+    &__erroricon {        
+        margin-left: 20px;
+        display: none;
+
+        &--invalid {
+            display: initial;
+        }
+    }
+}
