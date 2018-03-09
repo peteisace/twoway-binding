@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Person from '../../ts/person';
 import { TextboxAndError } from '../../../src/ui/templates/textboxAndError';
+import { SimpleTextbox } from '../../../src/ui/templates/simpleTextbox';
+import { BoundCheckbox} from './boundCheckbox';
 
 export default class MainPage extends React.Component<{}, MainState> {
     constructor(props: any) {
@@ -25,8 +27,15 @@ export default class MainPage extends React.Component<{}, MainState> {
                         <label className="dc__label" htmlFor="name">Name</label>
                         <br />
                         <TextboxAndError id="jobTitle" className="dc__text"
-                            datacontext={this.state.model} targetProperty="name" />
+                            datacontext={this.state.model} targetProperty="jobTitle" />
                         <label className="dc__label" htmlFor="jobTitle">Job-title</label>                        
+                        <br />
+                        <TextboxAndError id="age" className="dc__text"
+                            datacontext={this.state.model} targetProperty="age" />
+                        <label className="dc__label" htmlFor="age">Age</label>                        
+                        <br />
+                        <BoundCheckbox id="isInsane" className="dc__checkbox"
+                            datacontext={this.state.model} targetProperty="isInsane" />
                 </fieldset>
             </main>
         )

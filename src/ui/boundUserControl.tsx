@@ -81,6 +81,7 @@ export default class BoundUserControl extends React.Component<TemplatedUIProps<B
         // we now need our special type.
         const sourcePropContainer = { [ binding.sourceProperty]: stateValue };
         filteredProps = { ...filteredProps, ...sourcePropContainer };
+
         // and NOW we are safe to dig out the template.        
         const TemplatedUI = this.props.template;                
         // and we send it back
@@ -88,7 +89,7 @@ export default class BoundUserControl extends React.Component<TemplatedUIProps<B
             <TemplatedUI 
                 modelValue={stateValue} 
                 errorDetail={stateError} 
-                databind={(newValue: string) => this.onBoundControlChanged(newValue)}
+                databind={(newValue: any) => { console.log('Template::Databind, newValue = ' + newValue.toString()); this.onBoundControlChanged(newValue)}}
                 filteredUiProps={filteredProps} />
         );
     }   
